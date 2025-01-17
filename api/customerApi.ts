@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { BASE_URL } from "@/constants/Constant";
-// const BASE_URL = process.env.EXPO_PUBLIC_API_URL;
 console.log(BASE_URL, "ini url");
 
 export async function getAllCustomer(

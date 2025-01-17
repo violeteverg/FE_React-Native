@@ -63,7 +63,6 @@ const ProductForm = ({
     console.log(productData);
     if (type === "update") {
       console.log(productData);
-      //   updateCustomerMutation({ id: data.customerId, val: customerData });
     } else {
       createProductMutation(productData);
     }

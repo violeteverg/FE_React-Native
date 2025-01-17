@@ -23,7 +23,6 @@ const CardComponent: React.FC<CardProps> = ({
   subContent = {},
   isExpand = false,
 }) => {
-  // State untuk mengontrol apakah card dapat diperluas
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -33,7 +32,6 @@ const CardComponent: React.FC<CardProps> = ({
   return (
     <Card style={styles.card} onPress={toggleExpand}>
       <Layout style={styles.contentContainer}>
-        {/* Tampikan konten hanya jika isExpanded bernilai true */}
         <View>
           {Object.entries(content).map(([key, value]) => (
             <Text key={key} category='p1' style={styles.text}>
@@ -76,13 +74,6 @@ const CardComponent: React.FC<CardProps> = ({
           Delete
         </Button>
       </Layout>
-
-      {/* Tombol untuk memperluas atau menyembunyikan card */}
-      {/* {isExpand && (
-        <Button style={styles.expandButton} onPress={toggleExpand} size='small'>
-          {isExpanded ? "Collapse" : "Expand"}
-        </Button>
-      )} */}
     </Card>
   );
 };

@@ -19,8 +19,8 @@ const ConfirmDeleteScreen = () => {
   const { mutate: removeProductMutation } = useMutation({
     mutationFn: (id: any) => removeProduct(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["CUSTOMER"] });
-      router.push("/customer");
+      queryClient.invalidateQueries({ queryKey: ["PRODUCT"] });
+      router.push("/product");
     },
     onError: () => {
       console.log("Error creating customer");

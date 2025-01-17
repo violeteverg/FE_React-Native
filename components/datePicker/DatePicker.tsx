@@ -18,20 +18,17 @@ const DatePickerModal: React.FC<DatePickerModalProps> = ({
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  // Menangani perubahan tanggal
   const handleDateChange = (params: any) => {
     setSelectedDate(params.date);
   };
 
-  // Menutup modal dan mengirimkan tanggal ke form
   const handleCloseModal = (field: any) => {
-    field.onChange(selectedDate); // Mengirimkan tanggal yang dipilih
-    setModalVisible(false); // Menutup modal
+    field.onChange(selectedDate);
+    setModalVisible(false);
   };
 
   return (
     <View style={styles.container}>
-      {/* Input untuk memilih tanggal */}
       <Controller
         control={control}
         name={name}
@@ -41,17 +38,15 @@ const DatePickerModal: React.FC<DatePickerModalProps> = ({
               style={styles.input}
               placeholder={label}
               value={selectedDate ? selectedDate.toLocaleDateString() : ""}
-              onFocus={() => setModalVisible(true)} // Membuka modal saat input difokuskan
+              onFocus={() => setModalVisible(true)}
             />
-            {/* Modal UI Kitten */}
             <Modal
               visible={isModalVisible}
               backdropStyle={styles.backdrop}
-              onBackdropPress={() => setModalVisible(false)} // Menutup modal saat bagian luar modal diketuk
+              onBackdropPress={() => setModalVisible(false)}
             >
               <View style={styles.modalContent}>
                 <Text style={styles.modalTitle}>Pilih Tanggal</Text>
-                {/* DateTimePicker */}
                 <DateTimePicker
                   mode='single'
                   date={selectedDate || new Date()}

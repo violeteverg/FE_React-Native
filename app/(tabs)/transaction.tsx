@@ -118,10 +118,9 @@ export default function TransactionPage() {
           })
         );
 
-        // Membuat subContent
         const subContent = {
           Nota: item.bill_id,
-          Products: productDetails, // Kirim array produk
+          Products: productDetails,
         };
 
         return (
